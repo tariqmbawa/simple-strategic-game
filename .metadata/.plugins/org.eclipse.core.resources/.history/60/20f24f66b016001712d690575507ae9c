@@ -35,6 +35,12 @@ public class LoginScreen extends Application {
     
         Scene scene = new Scene(root, 800, 500);
     
+        final Keyboard keyboard = new Keyboard(new Key(KeyCode.LEFT), 
+        									   new Key(KeyCode.UP), 
+        									   new Key(KeyCode.DOWN), 
+        									   new Key(KeyCode.RIGHT));
+        
+        root.add(new Group(keyboard.createNode()), 4, 4);
         stage.setTitle("User Login Screen");
         stage.setScene(scene);
         stage.show();
