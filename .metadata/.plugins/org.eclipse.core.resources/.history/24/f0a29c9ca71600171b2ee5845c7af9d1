@@ -1,0 +1,17 @@
+.root {
+     -fx-background-color: #222;
+}
+
+.label {
+	-fx-text-fill: #eee;
+	
+}
+
+#user-login-title {
+	-fx-fill: #ddd;
+	-fx-font-family: "Tahoma";
+	-fx-font-weight: normal;
+	-fx-font-size: 32px;
+
+	-fx-padding: 0 0 100 0;
+}

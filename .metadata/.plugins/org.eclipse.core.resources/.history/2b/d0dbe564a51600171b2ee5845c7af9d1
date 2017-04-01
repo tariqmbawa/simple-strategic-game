@@ -1,0 +1,4 @@
+.root {
+     -fx-background-color: #111;
+     -fx-color: #EEE;
+}
