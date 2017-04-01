@@ -1,0 +1,11 @@
+.root {
+     -fx-background-color: #111;
+}
+
+.label {
+	-fx-text-fill: #eee;
+}
+
+.text {
+	-fx-text-fill: #ddd;
+}

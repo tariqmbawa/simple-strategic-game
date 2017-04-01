@@ -1,0 +1,14 @@
+.root {
+     -fx-background-color: #111;
+}
+
+.label {
+	-fx-text-fill: #eee;
+}
+
+#welcome-text {
+	-fx-fill: #ddd;
+	-fx-font-family: "Tahoma";
+	-fx-font-weight: normal;
+	-fx-font-size: 20px;
+}
