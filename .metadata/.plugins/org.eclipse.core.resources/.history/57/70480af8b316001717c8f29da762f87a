@@ -1,0 +1,34 @@
+import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+
+public class LoginScreen extends Application {
+
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+	
+	@Override
+    public void start(Stage stage) throws Exception {
+		GridPane root = FXMLLoader.load(getClass().getResource("fxml_layout/login_screen_layout.fxml"));
+		
+		root.setOnKeyPressed(new EventHandler<KeyEvent>() {
+			public void handle(KeyEvent key) {
+					System.out.println("Key Pressed: " + key.getText());
+			}
+		});
+    
+        Scene scene = new Scene(root, 800, 500);
+    
+        stage.setTitle("User Login Screen");
+        stage.setScene(scene);
+        stage.show();
+    }
+}
