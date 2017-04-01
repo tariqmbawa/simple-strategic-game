@@ -1,0 +1,17 @@
+
+
+
+public class LoginScreen {
+
+	
+	public static void main(String[] args) {
+		Scene scene = new Scene(grid, 300, 275);
+		primaryStage.setScene(scene);
+		scene.getStylesheets().add(Login.class.getResource("login.css").toExternalForm());
+		primaryStage.show();
+		
+		});
+		
+		
+	}
+}
