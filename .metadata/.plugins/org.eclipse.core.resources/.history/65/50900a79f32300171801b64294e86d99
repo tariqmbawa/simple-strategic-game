@@ -1,0 +1,7 @@
+
+public class ProfileManager {
+
+	public Boolean validateLoginDetails(String username, String password) {
+		return true;
+	}
+}

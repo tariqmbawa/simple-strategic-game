@@ -1,0 +1,18 @@
+
+public class ProfileManager {
+	UserProfile mCurrentUserProfile;
+
+	public UserProfile validateLoginDetails(String username, String password) {
+		if (username == "user")
+			return new UserProfile("username", "password");
+		
+		return new UserProfile("name", "word");
+	}
+	
+	public void setCurrentUserProfile(UserProfile userProfile) {
+		mCurrentUserProfile = userProfile;
+	}
+	public UserProfile getCurrentUserProfile() {
+		return mCurrentUserProfile;
+	}
+}

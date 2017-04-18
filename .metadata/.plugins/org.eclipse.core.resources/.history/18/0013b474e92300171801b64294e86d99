@@ -1,0 +1,47 @@
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.application.Application;
+
+public class LoginScreenController implements Initializable {
+	private MenuState mMenuState;
+	
+	@FXML private Button signinButton;
+	
+	@FXML private TextField usernameText;
+	
+	@FXML private PasswordField passwordText;
+	
+    @FXML private Text actiontarget;
+    
+    @FXML protected void handleSubmitButtonAction(ActionEvent event) throws IOException {
+    	mMenuState.loginAction();
+    }
+    
+
+	public void setMenuState(MenuState menuState) {
+		mMenuState = menuState;
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,73 +1,58 @@
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
-public class LoginScreenController {
-	@FXML private Button signinButton;
-	@FXML private Button logoutButton;
+public class LoginScreenController implements Initializable {
+	private MenuState mMenuState;
+	private ProfileManager mProfileManager;
 	
-    @FXML private Text actiontarget;
+	@FXML private Button signinButton;
+	
+	@FXML private TextField usernameText;
+	
+	@FXML private PasswordField passwordText;
+	
+    @FXML private Text errorMessageText;
+    
+    
+    @Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		usernameText.setPromptText("Username");
+		passwordText.setPromptText("********");
+		
+	}
+    
+    public void setMenuState(MenuState menuState) {
+		mMenuState = menuState;
+    	mProfileManager = mMenuState.getProfileManager();
+	}
     
     @FXML protected void handleSubmitButtonAction(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
-        
-        // get reference to the Stage holding the Button
-        stage = (Stage) signinButton.getScene().getWindow();
-        
-        // load the game_screen_layout fxml document
-        root = FXMLLoader.load(getClass().getResource("fxml_layout/game_screen_layout.fxml"));
-        
-        //actiontarget.setText("Sign in button pressed");
-        root.setOnKeyPressed(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent key) {
-				if (key.getCode() == KeyCode.LEFT ||
-					key.getCode() == KeyCode.UP ||
-					key.getCode() == KeyCode.RIGHT ||
-					key.getCode() == KeyCode.DOWN)
-					System.out.println("Key Pressed: " + key.getCode().toString());
-			}
-		});
-        
-        Scene scene = new Scene(root, 800, 500);
-        stage.setScene(scene);
-        stage.show();
+    	UserProfile currentUser = mProfileManager.validateLoginDetails(usernameText.getText(), passwordText.getText());
+    	System.out.println(usernameText.getText() + ", " + passwordText.getText());
+    	if (currentUser != null)
+    	{
+    		mProfileManager.setCurrentUserProfile(currentUser);
+    		mMenuState.loginAction();
+    	}
+    	else
+    	{
+    		errorMessageText.setText("Login details incorrect");
+    	}
+    	
     }
     
-@FXML protected void handleLogoutButtonAction(ActionEvent event) throws IOException {
-		Stage stage;
-	    Parent root;
-	    
-	 // get reference to the Stage holding the Button
-        stage = (Stage) logoutButton.getScene().getWindow();
-        
-        // load the game_screen_layout fxml document
-        root = FXMLLoader.load(getClass().getResource("fxml_layout/login_screen_layout.fxml"));
-    	
-        //actiontarget.setText("Logout button pressed");
-        root.setOnKeyPressed(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent key) {
-				if (key.getCode() == KeyCode.LEFT ||
-					key.getCode() == KeyCode.UP ||
-					key.getCode() == KeyCode.RIGHT ||
-					key.getCode() == KeyCode.DOWN)
-					System.out.println("Key Pressed: " + key.getCode().toString());
-			}
-		});
-        
-        Scene scene = new Scene(root, 800, 500);
-        stage.setScene(scene);
-        stage.show();
-    }
+
+	
+
+	
 
 }

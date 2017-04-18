@@ -1,11 +1,11 @@
 
 public class UserProfile {
-	private String mUserName;
+	private String mUsername;
 	private String mPassword;
 	
-	public UserProfile(String aUserName, String aPassword) {
-		setUserName(aUserName);
-		setPassword(aPassword);
+	public UserProfile(String aUsername, String aPassword) {
+		mUsername = aUsername;
+		mPassword = aPassword;
 	}
 	
 	public String getPassword() {
@@ -16,10 +16,10 @@ public class UserProfile {
 	}
 	
 	public String getUserName() {
-		return mUserName;
+		return mUsername;
 	}
-	private void setUserName(String aUserName) {
-		mUserName = aUserName;
+	private void setUsername(String aUsername) {
+		mUsername = aUsername;
 	}
 	
 	public String getHashPassword() {

@@ -24,13 +24,13 @@
 	<Label text="User Name:"
 		GridPane.columnIndex="0" GridPane.rowIndex="1"/>
  
-	<TextField 
+	<TextField fx:id="usernameText"
 		GridPane.columnIndex="1" GridPane.rowIndex="1"/>
  
 	<Label text="Password:"
 		GridPane.columnIndex="0" GridPane.rowIndex="2"/>
  
-	<PasswordField fx:id="passwordField" 
+	<PasswordField fx:id="passwordText"
 		GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
 
@@ -41,7 +41,7 @@
 			onAction="#handleSubmitButtonAction"/>
 	</HBox>
 
-	<Text fx:id="actiontarget"
+	<Text fx:id="errorMessageText" 
 		GridPane.columnIndex="1" GridPane.rowIndex="6"/>
 
 </GridPane>

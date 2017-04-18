@@ -1,0 +1,30 @@
+
+public class UserProfile {
+	private String mUserName;
+	private String mPassword;
+	
+	public UserProfile(String aUserName, String aPassword) {
+		mUsername = aUsername;
+		mPassword = aPassword;
+	}
+	
+	public String getPassword() {
+		return mPassword;
+	}
+	private void setPassword(String aPassword) {
+		mPassword = aPassword;
+	}
+	
+	public String getUserName() {
+		return mUserName;
+	}
+	private void setUserName(String aUserName) {
+		mUserName = aUserName;
+	}
+	
+	public String getHashPassword() {
+		return mPassword.hashCode() + "";
+	}
+	
+	
+}
