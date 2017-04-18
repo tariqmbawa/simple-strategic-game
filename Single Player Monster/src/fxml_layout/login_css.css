@@ -14,3 +14,12 @@
 	-fx-font-size: 32px;
 
 }
+
+#error-message {
+	-fx-fill: #FF3333;
+}
+
+#play-screen-title {
+	-fx-font-family: "Eras Light ITC";
+	-fx-font-size: 30px;
+}

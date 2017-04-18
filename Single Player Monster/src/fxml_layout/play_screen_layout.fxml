@@ -6,37 +6,37 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:controller="PlayScreenController"
-		  styleClass="root"
-    	  xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PlayScreenController" styleClass="root">
 	<stylesheets>
     	<URL value="@login_css.css" />
     </stylesheets>
+    
+	<children>
+		<Label layoutX="20.0" layoutY="20.0" text="User Name:"/>
+		<Text layoutX="100.0" layoutY="25.0" fx:id="usernameText" text=""/>
 	
-	<padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
-
-
-	<Text id="user-login-title" text="Single Player Monster Game"
-		GridPane.columnIndex="0" GridPane.rowIndex="0"
-		GridPane.columnSpan="2"/>
+		<Button fx:id="newGameLabel" layoutX="74.0" layoutY="93.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" 
+			onAction="#newGameButtonAction" text="New Game" />
+		<Button layoutX="74.0" layoutY="138.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" 
+			onAction="#highScoresButtonAction" text="Highscores" />
+		<Button layoutX="74.0" layoutY="191.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0"
+			onAction="#handleLogoutButtonAction" fx:id="logoutButton" text="Logout" />
+			
+		<Label layoutX="68.0" layoutY="34.0" id="play-screen-title" text="Monster Game"/>
 		
-	<Label text="User Name:"
-		GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-	<Text fx:id="usernameText" text="Single Player Monster Game"
-		GridPane.columnIndex="1" GridPane.rowIndex="1"
-		GridPane.rowSpan="2"/>
- 
+		<Text layoutX="74.0" layoutY="300.0" fx:id="errorMessageText"/>
+	</children>
+</AnchorPane>
 
-	<HBox spacing="10" alignment="bottom_right" 
-		GridPane.columnIndex="1" GridPane.rowIndex="4">
+
+	
+
+
+	
 		
-		<Button fx:id="logoutButton" text="Logout"     
-			onAction="#handleLogoutButtonAction"/>
-	</HBox>
+	
 
-	<Text fx:id="errorMessageText"
-		GridPane.columnIndex="1" GridPane.rowIndex="6"/>
 
-</GridPane>
+	
+
 

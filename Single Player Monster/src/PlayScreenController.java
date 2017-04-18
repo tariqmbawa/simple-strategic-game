@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
@@ -16,6 +17,8 @@ public class PlayScreenController implements Initializable {
 	UserProfile mCurrentUser;
 	
 	@FXML private Text usernameText;
+	
+	@FXML private TextArea gameMapText;
 	
 	@FXML private Button logoutButton;
 	
@@ -37,6 +40,14 @@ public class PlayScreenController implements Initializable {
     
     @FXML protected void handleLogoutButtonAction(ActionEvent event) throws IOException {
 		mMenuState.logoutAction();
+    }
+    
+    @FXML protected void newGameButtonAction(ActionEvent event) throws IOException {
+    
+    }
+    
+    @FXML protected void highScoresButtonAction(ActionEvent event) throws IOException {
+        
     }
 
 	

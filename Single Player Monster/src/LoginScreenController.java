@@ -14,7 +14,7 @@ public class LoginScreenController implements Initializable {
 	private MenuState mMenuState;
 	private ProfileManager mProfileManager;
 	
-	@FXML private Button signinButton;
+	//@FXML private Button signinButton;
 	
 	@FXML private TextField usernameText;
 	
@@ -27,7 +27,6 @@ public class LoginScreenController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		usernameText.setPromptText("Username");
 		passwordText.setPromptText("********");
-		
 	}
     
     public void setMenuState(MenuState menuState) {

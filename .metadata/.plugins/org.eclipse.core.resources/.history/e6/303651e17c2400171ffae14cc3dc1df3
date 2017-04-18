@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="PlayScreenController" styleClass="root">
+	<stylesheets>
+		<URL value="@login_css.css" />
+	</stylesheets>
+	 
+	<children>
+		<Text id="user-login-title" text="Single Player Monster Game" layoutX="0.0" layoutY="0.0"/>
+		<Label text="User Name:"/>
+		<Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="14.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+		<Label layoutX="167.0" layoutY="34.0" prefHeight="17.0" prefWidth="47.0" text="Score:" />
+		<Button layoutX="227.0" layoutY="30.0" mnemonicParsing="false" text="Pause" />
+		<Button layoutX="227.0" layoutY="65.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="47.0" text="Exit" />
+		
+	</children>
+</AnchorPane>
+
+
+<Button fx:id="logoutButton" text="Logout"     
+			onAction="#handleLogoutButtonAction" />
+
+		
+	
+	<Text fx:id="usernameText" text="Single Player Monster Game"/>
+ 
+ 	
+
+		
+
+	<Text fx:id="errorMessageText" layoutX="300.0" layoutY="50.0"/>
+
+</GridPane>
+

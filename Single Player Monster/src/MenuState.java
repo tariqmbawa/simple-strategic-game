@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -59,7 +60,7 @@ public class MenuState extends Application {
 					getClass().getResource("fxml_layout/login_screen_layout.fxml")
 			);
 			
-			GridPane root = loader.load();
+			Parent root = loader.load();
 			Scene scene = new Scene(root, MINIMUM_WINDOW_WIDTH, MINIMUM_WINDOW_HEIGHT);
 			mStage.setScene(scene);
 			
@@ -77,7 +78,7 @@ public class MenuState extends Application {
 					getClass().getResource("fxml_layout/play_screen_layout.fxml")
 			);
 			
-			GridPane root = loader.load();
+			Parent root = loader.load();
 			Scene scene = new Scene(root, MINIMUM_WINDOW_WIDTH, MINIMUM_WINDOW_HEIGHT);
 			mStage.setScene(scene);
 			
