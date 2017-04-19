@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class LoginScreenController implements Initializable {
-	private MenuState mMenuState;
+	private ScreenState mScreenState;
 	private ProfileManager mProfileManager;
 	
 	//@FXML private Button signinButton;
@@ -29,18 +29,18 @@ public class LoginScreenController implements Initializable {
 		passwordText.setPromptText("********");
 	}
     
-    public void setMenuState(MenuState menuState) {
-		mMenuState = menuState;
-    	mProfileManager = mMenuState.getProfileManager();
+    public void setMenuState(ScreenState screenState) {
+		mScreenState = screenState;
+    	mProfileManager = mScreenState.getProfileManager();
 	}
     
-    @FXML protected void handleSubmitButtonAction(ActionEvent event) throws IOException {
+    @FXML protected void handleLoginButtonAction(ActionEvent event) throws IOException {
     	UserProfile currentUser = mProfileManager.validateLoginDetails(usernameText.getText(), passwordText.getText());
     	System.out.println(usernameText.getText() + ", " + passwordText.getText());
     	if (currentUser != null)
     	{
     		mProfileManager.setCurrentUserProfile(currentUser);
-    		mMenuState.loginAction();
+    		mScreenState.loginAction();
     	}
     	else
     	{
