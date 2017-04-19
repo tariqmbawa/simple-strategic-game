@@ -39,25 +39,27 @@ public class GameBoard {
 		
 	}
 	
-	public void displayBoard()
+	public String displayBoard()
 	{
-		System.out.print("| |");
+		String output = "";
+		output +="| |";
 		for (int i = 0; i < width; ++i)
 		{
-			System.out.print(i + "|");
+			output +=i + "|";
 		}
-		System.out.print("\n");
+		output +="\n";
 		
 		for (int j = 0; j < height; ++j)
 		{
-			System.out.print("|" + j + "|");
+			output +="|" + j + "|";
 			for (int k = 0; k < width; ++k)
 			{
-				System.out.print(boardCells[k][j].displayCellState() + "|");
+				output +=boardCells[k][j].displayCellState() + "|";
 			}
-			System.out.print("\n");
+			output +="\n";
+		
 		}
 		
-		
+		return output;
 	}
 }

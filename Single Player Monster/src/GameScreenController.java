@@ -6,49 +6,41 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.text.Text;
 
-public class MenuScreenController implements Initializable {
+public class GameScreenController implements Initializable {
+	
 	private ScreenState mScreenState;
-	UserProfile mCurrentUser;
+	//UserProfile mCurrentUser;
 	
-	@FXML private Text usernameText;
 	
-	@FXML private TextArea gameMapText;
-	
-	@FXML private Button logoutButton;
-	
-    @FXML private Text errorMessageText;
+	@FXML private TextArea boardArea;
     
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		
+		boardArea.setEditable(false);
+		boardArea.setFocusTraversable(false);
 	}
 	
     public void setMenuState(ScreenState screenState) {
 		mScreenState = screenState;
-		mCurrentUser = mScreenState.getProfileManager().getCurrentUserProfile();
+		//mCurrentUser = mScreenState.getProfileManager().getCurrentUserProfile();
 		
-		usernameText.setText(mCurrentUser.getUserName());
+		
 	}
     
-    @FXML protected void handleLogoutButtonAction(ActionEvent event) throws IOException {
-		mScreenState.logoutAction();
+   
+    
+    @FXML protected void pauseButtonAction(ActionEvent event) throws IOException {
+    	mScreenState.pauseGameAction();
     }
     
-    @FXML protected void newGameButtonAction(ActionEvent event) throws IOException {
-    	mScreenState.startGameAction();
-    
-    }
-    
-    @FXML protected void highScoresButtonAction(ActionEvent event) throws IOException {
-        
+    @FXML protected void exitButtonAction(ActionEvent event) throws IOException {
+        mScreenState.exitGameAction();
     }
 
 	
@@ -61,11 +53,17 @@ public class MenuScreenController implements Initializable {
 					key.getCode() == KeyCode.DOWN)
 					System.out.println("Key Pressed: " + key.getCode().toString());
 				
-				if (key.getCode() == KeyCode.SPACE)
-					new GameBoard().displayBoard();
+				if (key.getCode() == KeyCode.ENTER){
+					GameBoard gameBoard = new GameBoard();
+					gameBoard.initGameBoard();
+					boardArea.setText(gameBoard.displayBoard());
+					
+				}
+					
 			}
 		};
 	}
 	
+
 
 }

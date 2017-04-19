@@ -43,28 +43,12 @@ public class MenuScreenController implements Initializable {
     }
     
     @FXML protected void newGameButtonAction(ActionEvent event) throws IOException {
+    	mScreenState.startGameAction();
     
     }
     
     @FXML protected void highScoresButtonAction(ActionEvent event) throws IOException {
         
     }
-
-	
-	public EventHandler<KeyEvent> getOnKeyPressEventHandler() {	
-		return new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent key) {
-				if (key.getCode() == KeyCode.LEFT ||
-					key.getCode() == KeyCode.UP ||
-					key.getCode() == KeyCode.RIGHT ||
-					key.getCode() == KeyCode.DOWN)
-					System.out.println("Key Pressed: " + key.getCode().toString());
-				
-				if (key.getCode() == KeyCode.SPACE)
-					new GameBoard().displayBoard();
-			}
-		};
-	}
-	
 
 }
