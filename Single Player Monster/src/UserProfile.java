@@ -18,8 +18,13 @@ public class UserProfile {
 	public String getUserName() {
 		return mUsername;
 	}
-	private void setUsername(String aUsername) {
-		mUsername = aUsername;
+	public Boolean setUsername(String aUsername) {
+		if (aUsername.length() > 2) {
+			mUsername = aUsername;
+			return true;
+		}
+		
+		return false;
 	}
 	
 	public String getHashPassword() {

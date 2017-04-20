@@ -18,8 +18,6 @@ public class MenuScreenController implements Initializable {
 	
 	@FXML private Text usernameText;
 	
-	@FXML private TextArea gameMapText;
-	
 	@FXML private Button logoutButton;
 	
     @FXML private Text errorMessageText;
