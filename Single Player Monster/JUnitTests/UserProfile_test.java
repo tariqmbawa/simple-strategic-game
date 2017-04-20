@@ -26,6 +26,17 @@ public class UserProfile_test {
 		assertEquals(testUserProfile.getHashPassword(), "762431598");
 	}
 	
+	@Test
+	public void setUsernameReturnsFalseForUsernameTooShort() {
+		assertEquals(testUserProfile.setUsername("ab"), false);
+	}
+	
+	@Test
+	public void setUsernameReturnsTrueForUsername() {
+		assertEquals(testUserProfile.setUsername("John"), true);
+	}
+	
+	
 	
 	
 	

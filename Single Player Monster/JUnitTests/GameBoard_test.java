@@ -16,8 +16,6 @@ public class GameBoard_test {
 	public void cellCharacterReturnsEmptyState()
 	{
 		assertEquals(testCell.getCellStateCharacter(CellState.EMPTY), ' ');
-		
-		
 	}
 
 	@Test

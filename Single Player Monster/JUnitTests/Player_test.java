@@ -25,4 +25,11 @@ public class Player_test {
 		assertEquals(testPlayer.getY(), 1);
 
 	}
+	
+	@Test
+	public void playerDropsTwoPoisonMaximum() {
+		assertEquals(testPlayer.placePoison(), true);
+		assertEquals(testPlayer.placePoison(), true);
+		assertEquals(testPlayer.placePoison(), false);
+	}
 }
