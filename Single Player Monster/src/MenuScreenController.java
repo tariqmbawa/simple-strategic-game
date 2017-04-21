@@ -26,7 +26,7 @@ public class MenuScreenController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		
+		logoutButton.setCancelButton(true);
 	}
 	
     public void setMenuState(ScreenState screenState) {

@@ -1,11 +1,16 @@
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -17,13 +22,18 @@ public class GameScreenController implements Initializable {
 	
 	
 	@FXML private TextArea boardArea;
-    
+	
+	@FXML private Button pauseButton;
+	@FXML private Button exitButton;
+
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		boardArea.setEditable(false);
 		boardArea.setFocusTraversable(false);
+		
+		exitButton.setCancelButton(true);
 	}
 	
     public void setMenuState(ScreenState screenState) {
@@ -40,7 +50,16 @@ public class GameScreenController implements Initializable {
     }
     
     @FXML protected void exitButtonAction(ActionEvent event) throws IOException {
-        mScreenState.exitGameAction();
+    	Alert alert = new Alert(AlertType.CONFIRMATION);
+    	alert.setTitle("Ending Game");
+    	//alert.setHeaderText("Look, a Confirmation Dialog");
+    	alert.setContentText("Are you sure you want to quit?");
+
+    	Optional<ButtonType> result = alert.showAndWait();
+    	if (result.get() == ButtonType.OK){
+    		mScreenState.exitGameAction();
+    	}
+    	
     }
 
 	
@@ -50,16 +69,16 @@ public class GameScreenController implements Initializable {
 				if (key.getCode() == KeyCode.LEFT ||
 					key.getCode() == KeyCode.UP ||
 					key.getCode() == KeyCode.RIGHT ||
-					key.getCode() == KeyCode.DOWN)
+					key.getCode() == KeyCode.DOWN) {
 					System.out.println("Key Pressed: " + key.getCode().toString());
+				}
 				
-				if (key.getCode() == KeyCode.ENTER){
+				if (key.getCode() == KeyCode.A){
 					GameBoard gameBoard = new GameBoard();
 					gameBoard.initGameBoard();
 					boardArea.setText(gameBoard.displayBoard());
-					
 				}
-					
+				
 			}
 		};
 	}

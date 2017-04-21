@@ -5,6 +5,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="hamcrest-core-1.3.jar"/>
 	<classpathentry kind="lib" path="junit-4.12.jar"/>
-	<classpathentry kind="lib" path="/Users/s3420515/Innovation-Nation/Single Player Monster/jfxrt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chili/Documents/GitHub/rmit/Innovation-Nation/Single Player Monster/jfxrt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

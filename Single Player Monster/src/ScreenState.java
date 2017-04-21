@@ -107,24 +107,24 @@ public class ScreenState extends Application {
 	
 
 
-private void launchGameScreen() {
-	try {
-		FXMLLoader loader = new FXMLLoader(
-				getClass().getResource("fxml_layout/game_screen_layout.fxml")
-		);
-		
-		Parent root = loader.load();
-		Scene scene = new Scene(root, MINIMUM_WINDOW_WIDTH, MINIMUM_WINDOW_HEIGHT);
-		mStage.setScene(scene);
-		
-		GameScreenController gameScreenController = loader.getController();
-		gameScreenController.setMenuState(this);
-		
-		root.setOnKeyPressed(gameScreenController.getOnKeyPressEventHandler());
-		
-	} catch (Exception ex) {
-		Logger.getLogger(ScreenState.class.getName()).log(Level.SEVERE, null, ex);
+	private void launchGameScreen() {
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					getClass().getResource("fxml_layout/game_screen_layout.fxml")
+			);
+			
+			Parent root = loader.load();
+			Scene scene = new Scene(root, MINIMUM_WINDOW_WIDTH, MINIMUM_WINDOW_HEIGHT);
+			mStage.setScene(scene);
+			
+			GameScreenController gameScreenController = loader.getController();
+			gameScreenController.setMenuState(this);
+			
+			root.setOnKeyPressed(gameScreenController.getOnKeyPressEventHandler());
+			
+		} catch (Exception ex) {
+			Logger.getLogger(ScreenState.class.getName()).log(Level.SEVERE, null, ex);
+		}
 	}
-}
 
 }

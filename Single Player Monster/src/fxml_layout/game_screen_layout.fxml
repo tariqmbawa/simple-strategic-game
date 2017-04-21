@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="300.0" prefWidth="300.0" styleClass="root" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameScreenController">
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameScreenController" styleClass="root">
    <children>
       <Label layoutX="167.0" layoutY="34.0" prefHeight="17.0" prefWidth="47.0" text="Score:" />
       <Button fx:id="pauseButton" layoutX="227.0" layoutY="30.0" mnemonicParsing="false" onAction="#pauseButtonAction" text="Pause" />
