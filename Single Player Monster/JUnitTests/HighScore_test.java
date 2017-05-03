@@ -4,24 +4,24 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class HighScore_test {
-	HighScore highscore;
+	GameScoreManager gameScoreManager;
 	
 	@Before
 	public void setHighScore() {
-		highscore = new HighScore();
+		gameScoreManager = new GameScoreManager();
 	}
 	
 	@Test
 	public void newHighscoreAddedForHigherScore() {
-		 assertEquals(highscore.getHighest(), 0);
-		 highscore.addScore(2);
-		 assertEquals(highscore.getHighest(), 2);
+		 assertEquals(gameScoreManager.getHighestGameScore(), 0);
+		 gameScoreManager.addScore(new GameScore("test", 2));
+		 assertEquals(gameScoreManager.getHighestGameScore(), 2);
 	}
 	@Test
 	public void newHighScoreNotAddedForHigherScore() {
-		highscore.addScore(2);
-		assertEquals(highscore.getHighest(), 2);
-		highscore.addScore(1);
-		assertEquals(highscore.getHighest(),2);
+		gameScoreManager.addScore(new GameScore("test", 2));
+		assertEquals(gameScoreManager.getHighestGameScore(), 2);
+		gameScoreManager.addScore(new GameScore("test", 1));
+		assertEquals(gameScoreManager.getHighestGameScore(),2);
 	}
 }

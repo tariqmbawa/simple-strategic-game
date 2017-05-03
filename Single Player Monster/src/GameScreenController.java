@@ -59,10 +59,10 @@ public class GameScreenController implements Initializable {
     	if (result.get() == ButtonType.OK){
     		mScreenState.exitGameAction();
     	}
-    	
+
     }
 
-	
+
 	public EventHandler<KeyEvent> getOnKeyPressEventHandler() {	
 		return new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent key) {
@@ -72,13 +72,13 @@ public class GameScreenController implements Initializable {
 					key.getCode() == KeyCode.DOWN) {
 					System.out.println("Key Pressed: " + key.getCode().toString());
 				}
-				
+
 				if (key.getCode() == KeyCode.A){
 					GameBoard gameBoard = new GameBoard();
 					gameBoard.initGameBoard();
 					boardArea.setText(gameBoard.displayBoard());
 				}
-				
+
 			}
 		};
 	}
