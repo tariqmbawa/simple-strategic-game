@@ -1,19 +1,15 @@
 
-public class Moveable extends Entity {
+abstract class Moveable extends Entity {
 	int speedUnit; // move time units
 	
-	Boolean canMove(int x, int y, int newX, int newY) {
-		// check if not disabled or time units still waiting
+	Boolean canMove(int x, int y, int newX, int newY){
+		//Check if there are any obstacles in the new x and y
+		// that prevent the entity from moving to it
 		
 		return true;
 	}
 	
-	Boolean move(int x, int y, int newX, int newY) {
-		// set entity's position to newX and newY
-		// reset wait unit time
-		
-		return true;
-	}
+	abstract Boolean move(int x, int y, int newX, int newY);
 	
 	Boolean startPoison(int startTimeUnit) {
 		// halve speed
@@ -25,6 +21,17 @@ public class Moveable extends Entity {
 	Boolean endPoison(int endTimeUnit) {
 		// double speed
 		
+		return true;
+	}
+	
+	Boolean startEffect(int startTime, int duration) {
+		// set elapsedTime to 0 and set affectingEntity boolean
+		
+		return true;
+	}
+	
+	Boolean endEffect() {
+		// effect time is up remove poison
 		return true;
 	}
 	
