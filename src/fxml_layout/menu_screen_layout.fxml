@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScreenController" styleClass="root">
+	<stylesheets>
+    	<URL value="@login_css.css" />
+    </stylesheets>
+    
+	<children>
+		<Label layoutX="20.0" layoutY="20.0" text="User Name:"/>
+		<Text layoutX="100.0" layoutY="25.0" fx:id="usernameText" text=""/>
+		
+		<Label layoutX="68.0" layoutY="34.0" id="play-screen-title" text="Monster Game"/>
+	
+		<Button fx:id="newGameLabel" layoutX="74.0" layoutY="93.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" 
+			onAction="#newGameButtonAction" text="New Game" />
+		<Button layoutX="74.0" layoutY="138.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" 
+			onAction="#highScoresButtonAction" text="Highscores" />
+		<Button layoutX="74.0" layoutY="191.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0"
+			onAction="#handleLogoutButtonAction" fx:id="logoutButton" text="Logout" />
+			
+		
+		
+		<Text layoutX="74.0" layoutY="300.0" fx:id="errorMessageText"/>
+	</children>
+</AnchorPane>
+
+
+	
+
+
+	
+		
+	
+
+
+	
+
+
