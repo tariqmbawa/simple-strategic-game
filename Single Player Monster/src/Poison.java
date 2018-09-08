@@ -1,35 +1,30 @@
+import javafx.scene.image.Image;
 
 public class Poison extends Entity {
-	int elapsedTimeUnit;
-	int endTimeUnit;
-	Boolean affectingEntity;
+	public static int PLACED_DURATION = 19;
 	
-	Boolean setPoison(int startTime, int duration) {
-		// set necessary values
+	int mDuration;
+	
+	public Poison(Image image, int x, int y) {
+		super(image, x, y);
+		mDuration = PLACED_DURATION;
+	}
+	
+	public Boolean setPoison(int x, int y) {
+		setX(x);
+		setY(y);
+		mDuration = 0;
 		return true;
 	}
 	
-	Boolean removePoison() {
-		// remove as the poison has been picked up or time duration has elapsed
-		
-		return true;
-	}
-	
-	Boolean startEffect(int startTime, int duration) {
-		// set elapsedTime to 0 and set affectingEntity boolean
-		
-		return true;
-	}
-	
-	Boolean endEffect() {
-		// effect time is up remove poison
-		return true;
-	}
-	
-	void update(int timeUnitDelta) {
-		// add time to elapsed
-		// check if hit endTimeUnits
-		// remove if hit endTime
+	public Boolean tickIsExpired() {
+		if (mDuration < PLACED_DURATION) {
+			mDuration++;
+			
+			if (mDuration >= PLACED_DURATION)
+				return true;
+		}
+		return false;
 	}
 	
 	

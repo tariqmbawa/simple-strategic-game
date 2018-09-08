@@ -1,7 +1,10 @@
+import java.io.Serializable;
 
-public class UserProfile {
+public class UserProfile implements Serializable {
+	private int mUserId;
 	private String mUsername;
 	private String mPassword;
+	private boolean isAdmin;
 	
 	public UserProfile(String username, String password) {
 		mUsername = username;
@@ -31,10 +34,29 @@ public class UserProfile {
 		
 		return false;
 	}
-	
+
+	public int getmUserId() {
+		return mUserId;
+	}
+
+	public void setmUserId(int mUserId) {
+		this.mUserId = mUserId;
+	}
+
 	public String getHashPassword() {
 		return mPassword.hashCode() + "";
 	}
 	
-	
+	public String toString() {
+		return mUsername;
+	}
+
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+
+	public void setAdmin(boolean admin) {
+		isAdmin = admin;
+	}
+
 }

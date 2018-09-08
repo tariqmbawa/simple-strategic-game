@@ -12,7 +12,7 @@ public class Player_test {
 	@Before
 	public void setPlayerPosition()
 	{
-		testPlayer = new Player(0, 0);
+		testPlayer = new Player(null, null, 0, 0);
 	}
 	
 	@Test
@@ -20,8 +20,9 @@ public class Player_test {
 	{
 		assertEquals(testPlayer.getX(), 0);
 		assertEquals(testPlayer.getY(), 0);
-		testPlayer.movePlayer(2, 1);
-		assertEquals(testPlayer.getX(), 2);
+		testPlayer.setDirection(Direction.DOWN);
+		testPlayer.moveToNextPosition();
+		assertEquals(testPlayer.getX(), 0);
 		assertEquals(testPlayer.getY(), 1);
 
 	}

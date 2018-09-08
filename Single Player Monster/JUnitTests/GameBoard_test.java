@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class GameBoard_test {
-	Cell testCell = new Cell(CellState.EMPTY);
+	Cell testCell = new Cell();
 	
 	
 	@Test

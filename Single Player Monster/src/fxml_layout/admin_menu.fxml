@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="AdminMainMenuController"
+            prefHeight="300.0" prefWidth="300.0">
+
+    <stylesheets>
+        <URL value="@login_css.css" />
+    </stylesheets>
+
+    <children>
+    <Label layoutX="20.0" layoutY="20.0" text="User Name:"/>
+        
+    <Label layoutX="68.0" layoutY="34.0" id="play-screen-title" text="Admin Menu"/>
+
+    <Button fx:id="newGameLabel" layoutX="74.0" layoutY="93.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0"
+            onAction="#handleViewPlayers" text="View Players" />
+    <Button layoutX="74.0" layoutY="138.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0"
+            onAction="#handleGameSettings" text="Game Settings" />
+    <Button layoutX="74.0" layoutY="191.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0"
+            onAction="#handleQuit"  text="Quit Game" />
+        
+    <Text layoutX="74.0" layoutY="300.0" fx:id="errorMessageText"/>
+    </children>
+</AnchorPane>

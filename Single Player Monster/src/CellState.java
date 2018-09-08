@@ -1,6 +1,5 @@
 
-public enum CellState
-{
+public enum CellState {
 	EMPTY,
 	PLAYER,
 	MONSTER,

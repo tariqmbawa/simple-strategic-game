@@ -11,7 +11,7 @@ public class MonsterAI {
 		
 	}
 	
-	void updatePath(Path path) {
+	void updatePath(Graph path) {
 		
 	}
 }
